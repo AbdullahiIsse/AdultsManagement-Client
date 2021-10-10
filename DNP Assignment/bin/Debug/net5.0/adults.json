@@ -223,21 +223,5 @@
     "Weight": 81.8,
     "Height": 172,
     "Sex": "M"
-  },
-  {
-    "JobTitle": {
-      "JobTitle": "test",
-      "Salary": 1999
-    },
-    "Id": 15,
-    "FirstName": "abdullahi",
-    "LastName": "isse",
-    "HairColor": "black",
-    "EyeColor": "black",
-    "Age": 20,
-    "Weight": 80,
-    "Height": 190,
-    "Sex": "M"
   }
-  
 ]

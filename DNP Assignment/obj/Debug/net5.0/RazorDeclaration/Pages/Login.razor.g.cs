@@ -112,7 +112,7 @@ using DNP_Assignment.Data;
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
-            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/Adults");
         }
         catch (Exception e)
         {

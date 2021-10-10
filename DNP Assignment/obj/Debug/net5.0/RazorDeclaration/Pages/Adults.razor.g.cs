@@ -105,16 +105,23 @@ using DNP_Assignment.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 69 "C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\Pages\Adults.razor"
+#line 71 "C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\Pages\Adults.razor"
        
 
+    private IList<Adult> filterAdultList;
     private IList<Adult> AdultsToShow;
+    private string? filterByFirstName;
+    
 
 
     protected override async Task OnInitializedAsync()
     {
-        AdultsToShow = _adultData.GetAdults();
+        filterAdultList = _adultData.GetAdults();
+        AdultsToShow = filterAdultList;
+
+
     }
+   
     
     
     private void RemoveTodo(int adultId)
@@ -123,6 +130,39 @@ using DNP_Assignment.Data;
         _adultData.RemoveAdults(adultId);
         
     }
+
+    private void FilterByFirstname(ChangeEventArgs changeEventArgs)
+    {
+        filterByFirstName = changeEventArgs.Value.ToString();
+
+        if (filterByFirstName.Length <= 0)
+        {
+            AdultsToShow = filterAdultList;
+        }
+        else
+        {
+             AdultsToShow= AdultsToShow.Where(
+                                    a => a.FirstName.ToLower().Contains(filterByFirstName.ToLower()) || a.FirstName.ToUpper().Contains(filterByFirstName.ToUpper())||
+                                         a.LastName.ToLower().Contains(filterByFirstName.ToLower()) || a.LastName.ToUpper().Contains(filterByFirstName.ToUpper()) ||
+                                         a.HairColor.ToLower().Contains(filterByFirstName.ToLower()) || a.HairColor.ToUpper().Contains(filterByFirstName.ToUpper()) ||
+                                         a.EyeColor.ToLower().Contains(filterByFirstName.ToLower()) || a.EyeColor.ToUpper().Contains(filterByFirstName.ToUpper()) ||
+                                         a.Age.ToString().ToLower().Contains(filterByFirstName.ToLower()) || a.Weight.ToString().ToLower().Contains(filterByFirstName.ToLower()) ||
+                                         a.Height.ToString().ToLower().Contains(filterByFirstName.ToLower()) || 
+                                         a.Sex.ToLower().Contains(filterByFirstName.ToLower()) || a.Sex.ToUpper().Contains(filterByFirstName.ToUpper()) ||
+                                         a.JobTitle.JobTitle.ToLower().Contains(filterByFirstName.ToLower()) || a.JobTitle.JobTitle.ToUpper().Contains(filterByFirstName.ToUpper()) ||
+                                         a.JobTitle.Salary.ToString().ToLower().Contains(filterByFirstName.ToLower())).ToList();
+        }
+
+         
+      
+        
+        
+      
+    }
+    
+    
+    
+    
 
 
 #line default
