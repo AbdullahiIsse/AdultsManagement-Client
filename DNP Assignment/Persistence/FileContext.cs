@@ -31,6 +31,16 @@ namespace FileData
             }
         }
 
+        public void Update(Adult adult)
+        {
+          Adult toUpdate = Adults.First(a => a.Id == adult.Id);
+          toUpdate.FirstName = adult.FirstName;
+          SaveChanges();
+
+
+
+        }
+
         public void SaveChanges()
         {
 

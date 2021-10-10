@@ -112,7 +112,7 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 46 "C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\Pages\AddAdults.razor"
+#line 45 "C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\Pages\AddAdults.razor"
        
     
     private Adult newAdult = new Adult();

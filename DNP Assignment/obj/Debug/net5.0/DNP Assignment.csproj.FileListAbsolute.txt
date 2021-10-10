@@ -60,3 +60,5 @@ C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\obj\Debug\net5.0\Razo
 C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Adults.razor.g.cs
 C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
+C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Edit.razor.g.cs
+C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Edit.razor.g.cs

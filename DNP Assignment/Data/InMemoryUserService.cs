@@ -21,7 +21,7 @@ namespace DNP_Assignment.Data
                 },
                 new User
                 {
-                    City = "Aarhus", Domain = "hotmail.com", Password = "654321", Role = "Student", BirthYear = 1998,
+                    City = "Aarhus", Domain = "hotmail.com", Password = "123456", Role = "Student", BirthYear = 1998,
                     SecurityLevel = 2, UserName = "Jakob"
                 }
             }.ToList();

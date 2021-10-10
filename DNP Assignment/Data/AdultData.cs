@@ -45,7 +45,7 @@ namespace DNP_Assignment.Data
 
         public void Update(Adult adult)
         {
-            throw new System.NotImplementedException();
+            adultFileContext.Update(adult);
         }
 
         public Adult Get(int id)

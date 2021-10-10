@@ -105,23 +105,26 @@ using DNP_Assignment.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\Pages\Adults.razor"
+#line 82 "C:\Users\abdul\RiderProjects\DNP Assignment\DNP Assignment\Pages\Adults.razor"
        
 
     private IList<Adult> filterAdultList;
     private IList<Adult> AdultsToShow;
     private string? filterByFirstName;
-    
 
 
     protected override async Task OnInitializedAsync()
     {
         filterAdultList = _adultData.GetAdults();
         AdultsToShow = filterAdultList;
-
-
     }
-    
+
+    private void RemoveTodo(int adultId)
+    {
+        Adult adultToRemove = AdultsToShow.First(a => a.Id == adultId);
+        _adultData.RemoveAdults(adultId);
+    }
+
 
     private void FilterByFirstname(ChangeEventArgs changeEventArgs)
     {
@@ -144,17 +147,23 @@ using DNP_Assignment.Data;
                      a.JobTitle.JobTitle.ToLower().Contains(filterByFirstName.ToLower()) || a.JobTitle.JobTitle.ToUpper().Contains(filterByFirstName.ToUpper()) ||
                      a.JobTitle.Salary.ToString().ToLower().Contains(filterByFirstName.ToLower()) || a.Id.ToString().ToLower().Contains(filterByFirstName.ToLower())).ToList();
         }
-        
     }
-    
-    
-    
-    
+
+
+    private void Edit(int id)
+    {
+        navMan.NavigateTo($"Edit/{id}");
+    }
+
+
+
+
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navMan { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultData _adultData { get; set; }
     }
 }
