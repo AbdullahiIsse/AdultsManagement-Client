@@ -50,14 +50,14 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        adultToEdit = AdultData.Get(Id);
+        adultToEdit = await AdultData.Get(Id);
         adultToEdit.JobTitle = job;
     }
 
     private void Save()
     {
         AdultData.Update(adultToEdit);
-        navMan.NavigateTo("/adults");
+        navMan.NavigateTo("/adults",true);
     }
 
 

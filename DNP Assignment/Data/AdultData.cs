@@ -1,6 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using FileData;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 using Models;
 
 namespace DNP_Assignment.Data
@@ -8,49 +12,107 @@ namespace DNP_Assignment.Data
     public class AdultData : IAdultData
     {
 
-      
-        private FileContext adultFileContext;
 
-        public AdultData()
+        public async Task<IList<Adult>> GetAdults()
         {
+            using HttpClient client = new HttpClient();
 
-            adultFileContext = new FileContext();
+            var httpResponseMessage = await client.GetAsync("https://localhost:5009/Adult");
+            
+            if (!httpResponseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception("failed to fetch data");
+            }
+            
+
+            var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
+
+            IList<Adult> adults = JsonSerializer.Deserialize<IList<Adult>>(readAsStringAsync, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+
+            return adults;
+        }
+
+        public async Task<Adult> AddAdults(Adult adult)
+        {
+            using HttpClient client = new HttpClient();
+
+            var adultSerialize = JsonSerializer.Serialize(adult);
+
+            HttpContent httpContent = new StringContent(
+                adultSerialize, Encoding.UTF8, "application/json");
+
+            var httpResponseMessage = await client.PostAsync("https://localhost:5009/Adult", httpContent);
+            
+            if (!httpResponseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception("failed to add data");
+            }
+
+            return adult;
 
         }
 
-       
-
-        public IList<Adult> GetAdults()
+        public async Task RemoveAdults(int adultId)
         {
-           
-            return adultFileContext.Adults;
+
+            using HttpClient client = new HttpClient();
+            var httpResponseMessage = await client.DeleteAsync($"https://localhost:5009/Adult/{adultId}");
+            
+            if (!httpResponseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception("failed to delete data");
+            }
             
         }
 
-        public void AddAdults(Adult adult)
+        public async Task<Adult> Update(Adult adult)
         {
-            int max = adultFileContext.Adults.Max(adult => adult.Id);
-            adult.Id =(++max);
-            adultFileContext.Adults.Add(adult);
-            adultFileContext.SaveChanges();
+            using HttpClient client = new HttpClient();
+
+            var adultSerialize = JsonSerializer.Serialize(adult);
+
+            HttpContent httpContent = new StringContent(
+                adultSerialize, Encoding.UTF8, "application/json");
+
+            var httpResponseMessage = await client.PatchAsync($"https://localhost:5009/Adult/{adult.Id}", httpContent);
+            
+            if (!httpResponseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception("failed to update data");
+            }
+
+            return adult;
         }
 
-        public void RemoveAdults(int adultId)
+        public async Task<Adult> Get(int id)
         {
             
-            Adult toRemove = adultFileContext.Adults.First(a => a.Id == adultId);
-            adultFileContext.Adults.Remove(toRemove);
-            adultFileContext.SaveChanges();
-        }
+            using HttpClient client = new HttpClient();
 
-        public void Update(Adult adult)
-        {
-            adultFileContext.Update(adult);
-        }
+            var httpResponseMessage = await client.GetAsync($"https://localhost:5009/Adult/{id}");
+            
+            if (!httpResponseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception("failed to fetch data by id");
+            }
+            
 
-        public Adult Get(int id)
-        {
-            return adultFileContext.Adults.FirstOrDefault(a => a.Id == id);
+            var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
+
+            Adult adults = JsonSerializer.Deserialize<Adult>(readAsStringAsync, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+
+            return adults;
+            
+            
+            
         }
     }
 }

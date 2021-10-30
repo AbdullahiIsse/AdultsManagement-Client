@@ -88,7 +88,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        filterAdultList = _adultData.GetAdults();
+        filterAdultList = await _adultData.GetAdults();
         AdultsToShow = filterAdultList;
     }
 
@@ -96,6 +96,7 @@ else
     {
         Adult adultToRemove = AdultsToShow.First(a => a.Id == adultId);
         _adultData.RemoveAdults(adultId);
+        navMan.NavigateTo("/Adults",true);
     }
 
 
