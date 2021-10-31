@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abdul\\RiderProjects\\AdultBlazor\\DNP Assignment\\DNP Assignment.csproj": {}
+    "C:\\Users\\abdul\\RiderProjects\\DNPAssignmentBlazor\\DNP Assignment\\DNP Assignment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abdul\\RiderProjects\\AdultBlazor\\DNP Assignment\\DNP Assignment.csproj": {
+    "C:\\Users\\abdul\\RiderProjects\\DNPAssignmentBlazor\\DNP Assignment\\DNP Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abdul\\RiderProjects\\AdultBlazor\\DNP Assignment\\DNP Assignment.csproj",
+        "projectUniqueName": "C:\\Users\\abdul\\RiderProjects\\DNPAssignmentBlazor\\DNP Assignment\\DNP Assignment.csproj",
         "projectName": "DNP Assignment",
-        "projectPath": "C:\\Users\\abdul\\RiderProjects\\AdultBlazor\\DNP Assignment\\DNP Assignment.csproj",
+        "projectPath": "C:\\Users\\abdul\\RiderProjects\\DNPAssignmentBlazor\\DNP Assignment\\DNP Assignment.csproj",
         "packagesPath": "C:\\Users\\abdul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abdul\\RiderProjects\\AdultBlazor\\DNP Assignment\\obj\\",
+        "outputPath": "C:\\Users\\abdul\\RiderProjects\\DNPAssignmentBlazor\\DNP Assignment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abdul\\AppData\\Roaming\\NuGet\\NuGet.Config"
