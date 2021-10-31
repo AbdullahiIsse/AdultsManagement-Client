@@ -1,47 +1,37 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 
 namespace DNP_Assignment.Data
 {
     public class InMemoryUserService : IUserService
     {
-        private List<User> users;
-
-        public InMemoryUserService()
+        public async Task<User> ValidateUser(string userName, string Password)
         {
-            users = new[]
-            {
-                new User
-                {
-                    City = "Horsens", Domain = "via.dk", Password = "123456", Role = "Teacher", BirthYear = 1986,
-                    SecurityLevel = 4, UserName = "bob"
-                },
-                new User
-                {
-                    City = "Aarhus", Domain = "hotmail.com", Password = "123456", Role = "Student", BirthYear = 1998,
-                    SecurityLevel = 2, UserName = "Jakob"
-                }
-            }.ToList();
-        }
+            using HttpClient httpClient = new HttpClient();
 
-
-        public User ValidateUser(string userName, string Password)
-        {
-            User first = users.FirstOrDefault(user => user.UserName.Equals(userName));
-            if (first == null)
+            var httpResponseMessage =
+                await httpClient.GetAsync($"https://localhost:5009/User?username={userName}&password={Password}");
+            
+            if (!httpResponseMessage.IsSuccessStatusCode)
             {
-                throw new Exception("User not found");
+                throw new Exception("User not Found");
             }
 
-            if (!first.Password.Equals(Password))
-            {
-                throw new Exception("Incorrect password");
-            }
 
-            return first;
+            var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
+
+
+            User user = JsonSerializer.Deserialize<User>(readAsStringAsync, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            return user;
         }
     }
 }
