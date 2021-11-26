@@ -54,9 +54,9 @@ else
         adultToEdit.JobTitle = job;
     }
 
-    private void Save()
+    private async void Save()
     {
-        AdultData.Update(adultToEdit);
+        await AdultData.Update(adultToEdit);
         navMan.NavigateTo("/adults",true);
     }
 
