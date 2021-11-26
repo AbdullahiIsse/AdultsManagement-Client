@@ -28,8 +28,8 @@ namespace DNP_Assignment.Data
             {
                 string userAsJson = await jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
                 if (!string.IsNullOrEmpty(userAsJson))
-                {
-                    User tmp = JsonSerializer.Deserialize<User>(userAsJson);
+                { 
+                    User tmp = JsonSerializer.Deserialize<User>(userAsJson); 
                     ValidateLogin(tmp.UserName, tmp.Password);
                 }
             }

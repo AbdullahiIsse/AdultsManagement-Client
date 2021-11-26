@@ -136,7 +136,6 @@ C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\AddAdults.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Adults.razor.g.cs
-C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Edit.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
@@ -168,7 +167,6 @@ C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\App.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\Pages\AddAdults.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Adults.razor.g.cs
-C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Edit.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
@@ -190,3 +188,5 @@ C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\DNP Assignment.Views.pdb
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\DNP Assignment.genruntimeconfig.cache
 C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\DNP Assignment.csproj.CopyComplete
+C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Edit.razor.g.cs
+C:\Users\abdul\RiderProjects\DNPAssignmentBlazor\DNP Assignment\obj\Debug\net5.0\Razor\Pages\Edit.razor.g.cs

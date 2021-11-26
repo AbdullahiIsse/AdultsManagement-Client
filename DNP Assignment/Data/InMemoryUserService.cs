@@ -21,7 +21,7 @@ namespace DNP_Assignment.Data
             {
                 throw new Exception("User not Found");
             }
-
+            
 
             var readAsStringAsync = await httpResponseMessage.Content.ReadAsStringAsync();
 
